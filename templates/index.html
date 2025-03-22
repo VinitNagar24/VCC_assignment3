@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Prices</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        table {
+            width: 50%;
+            margin: 0 auto;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 12px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        td {
+            background-color: #f9f9f9;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Stock Prices for Apple and Google</h1>
+
+    <table>
+        <tr>
+            <th>Stock</th>
+            <th>Price (USD)</th>
+        </tr>
+        <tr>
+            <td>Apple (AAPL)</td>
+            <td>${{ apple_price }}</td>
+        </tr>
+        <tr>
+            <td>Google (GOOGL)</td>
+            <td>${{ google_price }}</td>
+        </tr>
+    </table>
+
+</body>
+</html>
