@@ -3,9 +3,9 @@ import time
 from googleapiclient.discovery import build
 from google.oauth2 import service_account
 
-PROJECT_ID = 'your-gcp-project-id'
+PROJECT_ID = 'vm01'
 ZONE = 'us-central1-a'
-INSTANCE_GROUP_NAME = 'your-instance-group-name'
+INSTANCE_GROUP_NAME = 'web-migration'
 MIGRATION_SCRIPT = 'migration_script.sh'  # Script to migrate app
 
 def check_cpu_usage():
@@ -14,11 +14,11 @@ def check_cpu_usage():
     return cpu_usage
 
 def migrate_application():
-    credentials = service_account.Credentials.from_service_account_file('path/to/service-account-key.json')
+    credentials = service_account.Credentials.from_service_account_file('/home/vmfedora/vccAssignment3/service-account-key.json')
     service = build('compute', 'v1', credentials=credentials)
 
     # Start migration by creating a new VM instance in the managed instance group
-    request = service.instanceGroups().resize(
+    request = service.instanceGroupManagers().resize(
         project=PROJECT_ID,
         zone=ZONE,
         instanceGroup=INSTANCE_GROUP_NAME,
