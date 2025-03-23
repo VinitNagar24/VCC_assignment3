@@ -3,7 +3,7 @@ import time
 from googleapiclient.discovery import build
 from google.oauth2 import service_account
 
-PROJECT_ID = 'vm01'
+PROJECT_ID = 'vm01-452603'
 ZONE = 'us-central1-a'
 INSTANCE_GROUP_NAME = 'web-migration'
 MIGRATION_SCRIPT = 'migration_script.sh'  # Script to migrate app
@@ -21,7 +21,7 @@ def migrate_application():
     request = service.instanceGroupManagers().resize(
         project=PROJECT_ID,
         zone=ZONE,
-        instanceGroup=INSTANCE_GROUP_NAME,
+        instanceGroupManager=INSTANCE_GROUP_NAME,
         size=2  # Increase size by 1 to scale up
     )
     response = request.execute()
